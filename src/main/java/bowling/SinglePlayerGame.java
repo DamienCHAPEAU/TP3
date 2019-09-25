@@ -38,12 +38,15 @@ public class SinglePlayerGame {
 		int tour = 0;
                 	
 		for (int i = 0; i < 10; i++) {
+                        //Strike
 			if ((nbQuilleTombee.get(tour))==10) {
 				score += 10 + (nbQuilleTombee.get(tour+1) + nbQuilleTombee.get(tour+2));
 				tour++;
+                        //Spare
 			} else if ((nbQuilleTombee.get(tour)+nbQuilleTombee.get(tour+1))==10) {
 				score += 10 + nbQuilleTombee.get(tour+2);
 				tour+=2;
+                        //Autres
 			} else {
 				score += nbQuilleTombee.get(tour)+nbQuilleTombee.get(tour+1);
 				tour+=2;
